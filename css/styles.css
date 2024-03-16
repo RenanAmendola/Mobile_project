@@ -10863,3 +10863,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     margin-left: -15rem;
   }
 }
+
+.bg-light-blue{
+  background-color: #5ca0e4;
+}
