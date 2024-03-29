@@ -44,7 +44,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "index.html",
+  "start_url": "https://mobile-project-senac.netlify.app",
   "display": "standalone",
   "background_color": "#31506F",
   "theme_color": "#4D5360"
