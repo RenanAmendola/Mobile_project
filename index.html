@@ -6,26 +6,46 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Meu site</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- loja_loja_favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/loja_favicon.png" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <style>
-            /* Adicione estilos personalizados para dispositivos móveis aqui, se necessário */
-            @media (max-width: 768px) {
-                /* Exemplo: */
-                .sidebar-heading {
-                    font-size: 1.2rem;
-                }
-                /* Adicione outros estilos conforme necessário */
+            /* Estilos gerais */
+            body {
+              font-family: Arial, sans-serif;
+              background-color: #e4e4e4;
+              /* Cor de fundo */
+              margin: 0;
+              padding: 0;
+              overflow-x: hidden;
+              /* Impedir rolagem horizontal */
             }
-            </style>
+        
+            /* Estilos de cartão de produto */
+            .product-card {
+              background-color: #6d6f72;
+              /* Cor de fundo */
+              margin: 10px;
+              padding: 15px;
+              border-radius: 10px;
+              /* Bordas arredondadas */
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              /* Sombra */
+            }
+        
+            .product-card img {
+              max-width: 100%;
+              border-radius: 5px;
+              /* Bordas arredondadas para imagens */
+            }
+          </style>
     </head>
     <body>
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
             <div class="border-end bg-white" id="sidebar-wrapper">
-                <div class="sidebar-heading border-bottom bg-light">OLX do Paraguai</div>
+                <div class="sidebar-heading border-bottom bg-light-nav">OLX do Paraguai</div>
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/index.html">Home</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="venda.html">Venda</a>

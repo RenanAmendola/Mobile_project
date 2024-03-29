@@ -1,0 +1,51 @@
+{
+  "name": "OLX Paraguai",
+  "short_name": "OLXP",
+  "icons": [
+    {
+      "src": "assets/img/29.png",
+      "sizes": "29x29",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/40.png",
+      "sizes": "40x40",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/57.png",
+      "sizes": "57x57",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/1024.png",
+      "sizes": "192x192",
+      "type": "image/png",
+	  "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/58.png",
+      "sizes": "58x58",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/80.png",
+      "sizes": "80x80",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#31506F",
+  "theme_color": "#4D5360"
+}
