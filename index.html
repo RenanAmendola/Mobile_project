@@ -2,9 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta name="theme-color" content="#4D5360"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <link href="manifest.json" rel="manifest"/>
         <title>Meu site</title>
         <!-- loja_loja_favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/loja_favicon.png" />
@@ -79,6 +81,22 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+            let newWorker;
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('/service-worker.js').then(reg => {
+                reg.addEventListener('updatefound', () => {
+                  newWorker = reg.installing;
+                });
+              });
+              let refreshing;
+              navigator.serviceWorker.addEventListener('controllerchange', function () {
+                if (refreshing) return;
+                window.location.reload();
+                refreshing = true;
+              });
+            }
+          </script>
     </body>
 </html>
 
