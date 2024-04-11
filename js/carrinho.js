@@ -30,8 +30,7 @@ function fetchCartData(productId) {
         console.log("Dados do carrinho:", data);
         displayCartInfo(data);
         // Adiciona o produto ao elemento pai
-        productListElement.appendChild(productCard);
-        // Faça algo com os dados, como exibir no HTML
+
       })
       .catch(function(error) {
         // Captura qualquer erro que ocorra durante a requisição
@@ -76,4 +75,46 @@ function displayCartInfo(cartData) {
     console.log("Nenhum ID de produto encontrado na URL.");
   }
 
+
+
+  function consultar_api_rua(event) {
+    var valor_cep = document.getElementById("valor_cep").value;
+  
+    var url = 'http://dados.recife.pe.gov.br/api/3/action/datastore_search?resource_id=01187dc5-61d0-438b-b1bc-b1ec508a3e0f&q=' + valor_cep;
+  
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      success: function(data) {
+        // Verifica se há resultados
+        if (data.result && data.result.records && data.result.records.length > 0) {
+          // Obtém o primeiro resultado
+          var cep_api_resultado = data.result.records[0];
+  
+
+
+          var nome_oficial_logradouro 
+          var municipio 
+          var uf 
+
+          document.getElementById("bairro").value = cep_api_resultado.nomebairro;
+          document.getElementById("logradouro").value = cep_api_resultado.nome_oficial_logradouro;
+          document.getElementById("municipio").value = cep_api_resultado.municipio;
+          document.getElementById("uf").value = cep_api_resultado.uf;
+  
+          // Faça algo com os valores extraídos, como exibir na página HTML
+          console.log("Coluna 1:", nome_bairro);
+          console.log("Coluna 2:", nome_oficial_logradouro);
+          console.log("Coluna 3:", municipio);
+          console.log("Coluna 4:", uf);
+        } else {
+          console.log("Nenhum resultado encontrado para o CEP fornecido.");
+        }
+      },
+      error: function(xhr, status, error) {
+        console.error('Erro ao consultar a API:', error);
+      }
+    });
+  }
+  
   

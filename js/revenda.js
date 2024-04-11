@@ -42,7 +42,7 @@ function fetchData(url, callback) {
               <div class="card-footer d-flex align-items-center justify-content-between">
               <small class="text-white product-price">Preço: R$ ${product.price.toFixed(2)}</small>
               <input type="hidden" value="${product.id}">
-                <button class="btn btn-success btn-sm">Comprar</button>
+              <button class="btn btn-success btn-sm" onclick="redirecionar_carrinho(event)">Comprar</button>
               </div>
             </div>
           `;
@@ -62,4 +62,14 @@ function fetchData(url, callback) {
   
   // Faz a requisição para a API
   fetchData(apiUrl, handleData);
+
+
+  function redirecionar_carrinho(event) {
+    // Obtenha o ID do produto clicado
+    var productId = event.target.parentNode.querySelector("input[type=hidden]").value;
+
+  
+    // Defina o ID do produto como parâmetro na URL da próxima página
+    window.location.href = "carrinho.html?id=" + productId;
+  }
   

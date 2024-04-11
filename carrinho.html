@@ -68,15 +68,27 @@
                 <!-- Page content-->
                 <div class="container-fluid">
                     <h1 class="mt-4">OLX do paraguai</h1>
-                    <p>Seja bem vindo ao OLX do paraguai, aonde as pessoas podem vender produtos novos e usados.</p>
+                    <h2>Carrinho.</h2>
 
                 </div>
 
                 <div id="api-data-carrinho" class="row"></div>
 
-                <div class="container-fluid">
-                    <p>Va para a area de <a href="venda.html"><strong>vendas</strong></a>/<a href="/revenda.html"><strong>revendas</strong></a> para ver os produtos</p>
+                <div>
+                  <input type="text" id="valor_cep" placeholder="Cep">
+
+                  <input type="text" id="logradouro" placeholder="Endereço">
+                  <input type="text" placeholder="Numero">
+                  <input type="text" id="bairro" placeholder="Bairro">
+                  <input type="text" id="municipio" placeholder="Cidade">
+                  <input type="text" id="uf" placeholder="Estado">
+
                 </div>
+
+                <button id="askButton" onclick="consultar_api_rua(event)">Ask for location</button>
+
+
+
             </div>
         </div>
         <!-- Bootstrap core JS-->
@@ -84,6 +96,8 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script src="js/carrinho.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
         <script>
             let newWorker;
             if ('serviceWorker' in navigator) {
