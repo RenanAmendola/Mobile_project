@@ -80,7 +80,7 @@ function displayCartInfo(cartData) {
   function consultar_api_rua(event) {
     var valor_cep = document.getElementById("valor_cep").value;
   
-    var url = 'https://dados.recife.pe.gov.br/api/3/action/datastore_search?resource_id=01187dc5-61d0-438b-b1bc-b1ec508a3e0f&q=' + valor_cep;
+    var url = 'http://dados.recife.pe.gov.br/api/3/action/datastore_search?resource_id=01187dc5-61d0-438b-b1bc-b1ec508a3e0f&q=' + valor_cep;
   
     $.ajax({
       url: url,
