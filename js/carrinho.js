@@ -1,85 +1,24 @@
-// Obtenha o ID do produto dos parâmetros da URL
-var urlParams = new URLSearchParams(window.location.search);
-var productId = urlParams.get('id');
-console.log(productId)
-// Use o ID do produto na chamada à API do carrinho
-// Exemplo:
-// fetchData("http://localhost:8080/Cart/" + productId, function(response) {
-//   // Manipule a resposta da API do carrinho aqui
-// });
+const nome_produto = localStorage.getItem('nome_produto');
+const imagem_produto = localStorage.getItem('imagem_produto');
+const descrição = localStorage.getItem('descrição');
+const tipo = localStorage.getItem('tipo');
+const produto_preço = localStorage.getItem('preço_produto');
 
-// Função para fazer uma requisição HTTP GET
-function fetchCartData(productId) {
-    // URL da API do carrinho com o ID do produto como parâmetro
-    var cartUrl = "http://localhost:8080/Products/" + productId;
-  
-    // Faz a requisição GET para a API do carrinho
-    fetch(cartUrl)
-      .then(function(response) {
-        // Verifica se a resposta da requisição foi bem-sucedida (status 200)
-        if (response.ok) {
-          // Converte a resposta para JSON
-          return response.json();
-        } else {
-          // Em caso de erro na resposta, lança uma exceção
-          throw new Error('Erro ao obter dados do carrinho: ' + response.status);
-        }
-      })
-      .then(function(data) {
-        // Manipula os dados do carrinho
-        console.log("Dados do carrinho:", data);
-        displayCartInfo(data);
-        // Adiciona o produto ao elemento pai
+// Exibir os detalhes do produto no carrinho
+document.getElementById("api-data-carrinho").innerHTML = `
+    <div class="col-md-6 col-lg-4">
+        <div class="product-card">
+          <img src="${imagem_produto}"  class="card-img-top">
+            <h5 class="mt-3 text-capitalize" id="nome">${nome_produto}</h5>
+            <p class="text-break" id="descrição">${descrição}</p>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <small class="text-white" id="preço">Preço: R$ ${produto_preço}</small>
+                
+            </div>
+        </div>
+    </div>
+`;
 
-      })
-      .catch(function(error) {
-        // Captura qualquer erro que ocorra durante a requisição
-        console.error('Erro na requisição:', error.message);
-      });
-  }
-
-  var tipo_compra_valor
-// Função para exibir os dados do carrinho no HTML
-function displayCartInfo(cartData) {
-    // Seleciona o elemento onde os dados do carrinho serão exibidos
-    var cartInfoElement = document.getElementById("api-data-carrinho");
-  
-    // Limpa o conteúdo atual do elemento
-    cartInfoElement.innerHTML = "";
-  
-    // Cria elementos HTML para exibir as informações do carrinho
-    var productNameElement = document.createElement("p");
-    productNameElement.textContent = "Produto: " + cartData.name;
-  
-    var quantityElement = document.createElement("p");
-    quantityElement.textContent = "Descrição: " + cartData.description;
-  
-    var totalPriceElement = document.createElement("p");
-    totalPriceElement.textContent = "Preço Total: R$ " + cartData.price.toFixed(2);
-
-    var tipo_compra = document.createElement("p");
-    tipo_compra.textContent =  "Tipo de venda: "+ cartData.tipo
-
-    tipo_compra_valor = cartData.tipo
-  
-    // Adiciona os elementos ao elemento pai
-    cartInfoElement.appendChild(productNameElement);
-    cartInfoElement.appendChild(quantityElement);
-    cartInfoElement.appendChild(totalPriceElement);
-    cartInfoElement.appendChild(tipo_compra);
-  }
-  
-  // Obtenha o ID do produto dos parâmetros da URL
-  var urlParams = new URLSearchParams(window.location.search);
-  var productId = urlParams.get('id');
-  
-  // Verifique se o ID do produto existe e é válido
-  if (productId) {
-    // Chame a função para obter os dados do carrinho com o ID do produto
-    fetchCartData(productId);
-  } else {
-    console.log("Nenhum ID de produto encontrado na URL.");
-  }
 
 
 
@@ -150,14 +89,14 @@ function displayCartInfo(cartData) {
     }
     
     try {
-      var notification = new Notification("Compra realizada com sucesso! \nRedirecionando para a aba de "+ tipo_compra_valor);
+      var notification = new Notification("Compra realizada com sucesso! \nRedirecionando para a aba de "+ tipo);
 
       document.getElementById("botao_compra").innerHTML = "Aguarde..."
       
       // Adiciona um atraso de 3 segundos (3000 milissegundos) antes de redirecionar para outra página
       setTimeout(function() {
         // Redireciona para outra página
-        window.location.href = tipo_compra_valor +".html";
+        window.location.href = tipo +".html";
       }, 3000);
     } catch (err) {
       alert('Notification API error: ' + err);

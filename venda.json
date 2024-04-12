@@ -1,0 +1,47 @@
+{
+    "produtos": [
+      {
+        "nome": "Tablet Samsung",
+        "imagem": "https://i5.walmartimages.com/seo/Lenovo-Tab-M10-Plus-3rd-Gen-10-Tablet-64GB-Storage-4GB-Memory-Android-12-FHD-Display_6d20d86e-e339-4dea-a97d-788dbf71f08c.50da7e377a5410315db7b2430fc13a86.png",
+        "tipo" : "venda",
+        "descricao": "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.",
+        "preço": 3800
+      },
+      {
+        "nome": "Laptop gamer ACER",
+        "imagem": "https://imgs.extra.com.br/55054349/1g.jpg",
+        "tipo" : "venda",
+        "descricao": "Laptop gamer acer novo modelo anunciado.",
+        "preço": 5500
+      },
+      {
+        "nome": "Monitor Alienware",
+        "imagem": "https://i.dell.com/is/image/DellContent//content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3423dw/monitor-alienware-aw3423dw-pdp-hero.psd?qlt=95&fit=constrain,1&hei=3470&wid=5000&fmt=jpg",
+        "tipo" : "venda",
+        "descricao": "Monitor Alienware Com a tecnologia AMD FreeSync, você elimina qualquer corte ou travamento por meio da sincronização do GPU e do monitor. Experiência impecável com 144Hz Tempo de resposta ultrarrápido de 1ms. Base Ajustável: oferece um controle preciso da altura e ângulo de visão Dial Point: mira vermelha que fica posicionada no centro da tela.",
+        "preço": 1750
+      },
+      {
+        "nome": "Mouse + Teclado logitech",
+        "imagem": "https://resource.logitech.com/content/dam/logitech/en/products/combos/mk540-mouse-keyboard-combo/gallery/mk540-br-gallery1.png",
+        "tipo" : "venda",
+        "descricao": "Baterias de longa duração Teclas antidesbotamento e resistentes a derramamentos Acesso rápido, teclas multimídia e um conveniente teclado numérico Sensibilidade do mouse de 1000 DPI Pernas inclináveis para posições de digitação ajustáveis.",
+        "preço": 450
+      },
+      {
+        "nome": "Iphone 13x Max",
+        "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyYsBfdLtDfii7Q1YxucIhlAb2V-JhDCoyGg&usqp=CAU",
+        "tipo" : "venda",
+        "descricao": "Novo iphone 13 max esta disponivel para venda nesse site novinho.",
+        "preço": 8500
+      },
+      {
+        "nome": "Headset CORSAIR",
+        "imagem": "https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/c/a/ca-9011237-na3.jpg",
+        "tipo" : "venda",
+        "descricao": "Horas jogando confortavelmente: Auriculares ajustáveis de viscoelástico revestidos em couro artificial e um arco ajustável compõem uma estrutura leve que pesa apenas 273g e proporciona conforto durante horas de jogo. Áudio excelente para jogos: Drivers de áudio em neodímio de 50mm com ajuste personalizado e de alta qualidade oferecem a capacidade para escutar tudo no campo de batalha, além do suporte para Tempest 3D AudioTech no PS5. Dolby Audio 7.1 com som surround no PC e no Mac: O adaptador USB incluído permite ter uma experiência de áudio multicanal, mergulhando você dentro da ação do jogo. Microfone omnidirecional: Capta, com precisão, todas as suas chamadas e comandos, além de contar com uma prática função articulada para silenciar. Compatibilidade com várias plataformas: Jogue no PC, Mac, PS5/PS4, Xbox Series X | S, Nintendo Switch e dispositivos móveis por meio de um conector de 3,5mm..",
+        "preço": 840
+      }
+    ]
+  }
+  

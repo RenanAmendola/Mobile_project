@@ -1,0 +1,54 @@
+{
+
+ "produtos" : [
+        {
+            "id": 0,
+            "nome": "Samsung A70",
+            "imagem": "https://samsungbrshop.vtexassets.com/arquivos/ids/205579/SM-A346_Galaxy-A34-5G_Awesome-Graphite_Front2_.jpg",
+            "tipo" : "revenda",
+            "descricao": "Samsung A70 quase novo, pouco usado, 4 meses de uso.",
+            "preço": 1200
+        },
+        {
+            "id": 1,
+            "nome": "Laptop Gamer Usado",
+            "imagem": "https://d30u9wim1barf6.cloudfront.net/Custom/Content/Products/98/67/986751_notebook-gamer-asus-15-6-rog-strix-g531gt-i7-9750h-2-6ghz-512gb-16gb-gtx-1650-4gb-win10-home-pretonac006322_z1_637082947809490227.jpg",
+            "tipo" : "revenda", 
+            "descricao": "Laptop gamer usado, não curti o estilo, estou à procura de outro e pretendo me livrar desse.",
+            "preço": 2300
+        },
+        {
+            "id": 2,
+            "nome": "Tablet Samsung",
+            "imagem": "https://i5.walmartimages.com/seo/Lenovo-Tab-M10-Plus-3rd-Gen-10-Tablet-64GB-Storage-4GB-Memory-Android-12-FHD-Display_6d20d86e-e339-4dea-a97d-788dbf71f08c.50da7e377a5410315db7b2430fc13a86.png",
+            "tipo" : "revenda",
+            "descricao": "Estou vendendo porque não uso mais.",
+            "preço": 1100
+        },
+        {
+            "id": 3,
+            "nome": "USB",
+            "imagem": "https://m.media-amazon.com/images/I/71mConWh9BL.jpg",
+            "tipo" : "revenda",
+            "descricao": "USB recentemente formatado, 8GB de espaço.",
+            "preço": 25
+        },
+        {
+            "id": 4,
+            "nome": "XBOX Series S",
+            "imagem": "https://m.media-amazon.com/images/I/61sc+A9KapL._AC_UF1000,1000_QL80_.jpg",
+            "tipo" : "revenda",
+            "descricao": "Estou vendendo porque meu namorado me traiu!!!",
+            "preço": 450
+        },
+        {
+            "id": 5,
+            "nome": "K8000R | GWS",
+            "imagem": "https://lh3.googleusercontent.com/proxy/j9sq4SQd20QqcrIXyrxtqYZRo6LTwjNiM9sc7Jgu7omM2V-XkGtd47_IVqLyeb7At9a5eKv-7RytM2-NajWUoiWdlCwLyUSVkk5bk6I7XBteKByGGz9MitPUD3J_N5zs5t3axD2kJvXedQNn3EDSDMljZNG5VvBiYkM",
+            "tipo" : "revenda",
+            "descricao": "Estou vendendo porque preciso do dinheiro, engravidei minha mulher.",
+            "preço": 24000
+        }
+    ]
+
+}
