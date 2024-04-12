@@ -76,6 +76,7 @@
 
                 <div>
                   <input type="text" id="valor_cep" placeholder="Cep">
+                  <button id="askButton" onclick="consultar_api_rua(event)">Procurar CEP</button>
 
                   <input type="text" id="logradouro" placeholder="Endereço">
                   <input type="text" placeholder="Numero">
@@ -85,7 +86,16 @@
 
                 </div>
 
-                <button id="askButton" onclick="consultar_api_rua(event)">Ask for location</button>
+
+                <div>
+                  <button class="btn btn-success" id="botao_compra" onclick="requestPermissionAndNotify()">COMPRAR</button>
+                </div>
+
+                <p style="display: none;">Current permission status is <b id="status">unavailable</b>.</p>
+
+
+
+                
 
 
 

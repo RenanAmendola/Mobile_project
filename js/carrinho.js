@@ -38,7 +38,7 @@ function fetchCartData(productId) {
       });
   }
 
-  
+  var tipo_compra_valor
 // Função para exibir os dados do carrinho no HTML
 function displayCartInfo(cartData) {
     // Seleciona o elemento onde os dados do carrinho serão exibidos
@@ -56,11 +56,17 @@ function displayCartInfo(cartData) {
   
     var totalPriceElement = document.createElement("p");
     totalPriceElement.textContent = "Preço Total: R$ " + cartData.price.toFixed(2);
+
+    var tipo_compra = document.createElement("p");
+    tipo_compra.textContent =  "Tipo de venda: "+ cartData.tipo
+
+    tipo_compra_valor = cartData.tipo
   
     // Adiciona os elementos ao elemento pai
     cartInfoElement.appendChild(productNameElement);
     cartInfoElement.appendChild(quantityElement);
     cartInfoElement.appendChild(totalPriceElement);
+    cartInfoElement.appendChild(tipo_compra);
   }
   
   // Obtenha o ID do produto dos parâmetros da URL
@@ -90,25 +96,14 @@ function displayCartInfo(cartData) {
         if (data.result && data.result.records && data.result.records.length > 0) {
           // Obtém o primeiro resultado
           var cep_api_resultado = data.result.records[0];
-  
-
-
-          var nome_oficial_logradouro 
-          var municipio 
-          var uf 
 
           document.getElementById("bairro").value = cep_api_resultado.nomebairro;
           document.getElementById("logradouro").value = cep_api_resultado.nome_oficial_logradouro;
           document.getElementById("municipio").value = cep_api_resultado.municipio;
           document.getElementById("uf").value = cep_api_resultado.uf;
   
-          // Faça algo com os valores extraídos, como exibir na página HTML
-          console.log("Coluna 1:", nome_bairro);
-          console.log("Coluna 2:", nome_oficial_logradouro);
-          console.log("Coluna 3:", municipio);
-          console.log("Coluna 4:", uf);
         } else {
-          console.log("Nenhum resultado encontrado para o CEP fornecido.");
+          alert("Nenhum resultado encontrado para o CEP fornecido.");
         }
       },
       error: function(xhr, status, error) {
@@ -116,5 +111,59 @@ function displayCartInfo(cartData) {
       }
     });
   }
+
+
+
+
+  var $status = document.getElementById('status');
+
+  if ('Notification' in window) {
+    $status.innerText = Notification.permission;
+  }
+  
+  function requestPermissionAndNotify() {
+    if (!('Notification' in window)) {
+      alert('Notification API not supported!');
+      return;
+    }
+    
+    // Verifica se a permissão já foi concedida
+    if (Notification.permission === 'granted') {
+      // Se sim, mostra a notificação diretamente
+      showNotification();
+    } else {
+      // Se não, solicita permissão ao usuário
+      Notification.requestPermission(function (result) {
+        $status.innerText = result;
+        if (result === 'granted') {
+          // Se o usuário concedeu a permissão, mostra a notificação
+          showNotification();
+        }
+      });
+    }
+  }
+  
+  function showNotification() {
+    if (!('Notification' in window)) {
+      alert('Notification API not supported!');
+      return;
+    }
+    
+    try {
+      var notification = new Notification("Compra realizada com sucesso! \nRedirecionando para a aba de "+ tipo_compra_valor);
+
+      document.getElementById("botao_compra").innerHTML = "Aguarde..."
+      
+      // Adiciona um atraso de 3 segundos (3000 milissegundos) antes de redirecionar para outra página
+      setTimeout(function() {
+        // Redireciona para outra página
+        window.location.href = tipo_compra_valor +".html";
+      }, 3000);
+    } catch (err) {
+      alert('Notification API error: ' + err);
+    }
+  }
+  
+  
   
   
